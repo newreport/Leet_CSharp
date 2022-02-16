@@ -1,8 +1,17 @@
-﻿
+﻿using Leet;
 
-using Leet;
+Console.WriteLine(F(6)); 
 
-Sort();
+//Sort();
+
+int F(int x)
+{
+    if (x == 1)
+        return 1;
+    if (x == 2)
+        return 2;
+    return F(x-1)+F(x-2);
+}
 
 void Sort()
 {
