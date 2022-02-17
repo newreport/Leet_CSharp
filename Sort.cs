@@ -61,5 +61,65 @@ namespace Leet
             }
             Console.WriteLine(String.Join(",", arr));
         }
+
+
+        /// <summary>
+        /// 快速排序
+        /// 
+        /// </summary>
+        /// <param name="arr"></param>
+        public void Quick(int[] arr, int low, int high)
+        {
+            if (low < high)
+            {
+                int down = low;
+                int up = high;
+                //基准数据
+                int baseNum = arr[down];
+                while (down < up)
+                {
+                    while (down < up && arr[up] >= baseNum)
+                        up--;
+                    arr[down] = arr[up];
+                    while (down < up && arr[down] <= baseNum)
+                        down++;
+                    arr[up] = arr[down];
+                }
+                arr[down] = baseNum;
+                int index = up;
+                Quick(arr, low, index - 1);
+                Quick(arr, index + 1, high);
+            }
+        }
+
+
+        public void Quick2(int[] arr, int low, int high)
+        {
+            if (low >=high)
+            {
+                Console.WriteLine(String.Join(",", arr));
+                return;
+            }
+            int index = GetQuick2Index(arr, low, high);
+            Quick2(arr, low, index - 1);
+            Quick2(arr, index + 1, high);
+        }
+
+        public int GetQuick2Index(int[] arr, int low, int high)
+        {
+            int key = arr[low];
+            while (low < high)
+            {
+                while (low < high && arr[high] >= key)
+                    high--;
+                arr[low] = arr[high];
+                while (low < high && arr[low] <= key)
+                    low++;
+                arr[high] = arr[low];
+            }
+            arr[low] = key;
+
+            return high;
+        }
     }
 }

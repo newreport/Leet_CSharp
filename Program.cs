@@ -1,31 +1,35 @@
 ﻿using Leet;
 
-Console.WriteLine(F(6)); 
 
-//Sort();
+Sort();
 
-int F(int x)
+Console.ReadKey();
+void Series()
 {
-    if (x == 1)
-        return 1;
-    if (x == 2)
-        return 2;
-    return F(x-1)+F(x-2);
+    SeriesNums seriesNums = new();
+    Console.WriteLine(seriesNums.FibonacciNums(7));
 }
+
 
 void Sort()
 {
-
     Sort sort = new();
     List<int> ls = new List<int>();
     Random rd = new Random();
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 20; i++)
     {
-        ls.Add(rd.Next(0, 9999));
+        ls.Add(rd.Next(0, 100));
     }
     //冒泡
-    sort.Bubble(ls.ToArray());
+    //sort.Bubble(ls.ToArray());
     //选择
-    sort.Selection(ls.ToArray());
+    //sort.Selection(ls.ToArray());
 
+    //快排
+    int[] arr = ls.ToArray();
+    sort.Quick(arr, 0, arr.Length - 1);
+    //Console.WriteLine(String.Join(",", arr));
+
+    //快排2
+    sort.Quick2(ls.ToArray(), 0, ls.Count() - 1);
 }
