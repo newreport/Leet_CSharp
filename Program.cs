@@ -1,13 +1,13 @@
 ﻿using Leet;
 
 
-Sort();
-
+Series();
 Console.ReadKey();
 void Series()
 {
     SeriesNums seriesNums = new();
     Console.WriteLine(seriesNums.FibonacciNums(7));
+    Console.WriteLine(seriesNums.SumFactorial(100));
 }
 
 

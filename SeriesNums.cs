@@ -27,5 +27,23 @@ namespace Leet
             return FibonacciNums(x - 1) + FibonacciNums(x - 2);
         }
 
+
+        /// <summary>
+        /// 1+2+3+4+5+...+n
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public int SumFactorial(int x)
+        {
+            if (x > 0)
+            {
+                return SumFactorial(x - 1) + x;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
     }
 }
