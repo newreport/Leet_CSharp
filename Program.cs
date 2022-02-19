@@ -1,7 +1,7 @@
 ﻿using Leet;
 
 
-Series();
+Search();
 Console.ReadKey();
 void Series()
 {
@@ -10,6 +10,16 @@ void Series()
     Console.WriteLine(seriesNums.SumFactorial(100));
 }
 
+void Search()
+{
+    Search search = new();
+    List<int> list = new List<int>();
+    for (int i = 0; i < 100; i++)
+    {
+        list.Add(i);
+    }
+    Console.WriteLine(search.Binary(list.ToArray(), 0, list.Count() - 1, 30));
+}
 
 void Sort()
 {
@@ -22,6 +32,7 @@ void Sort()
     }
     //冒泡
     //sort.Bubble(ls.ToArray());
+
     //选择
     //sort.Selection(ls.ToArray());
 
